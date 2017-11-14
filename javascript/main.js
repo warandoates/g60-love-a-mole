@@ -8,8 +8,9 @@ var GLOBALS = {};
 // Build the Mole Field of Dreams
 // Start the game
 //
-window.onload = function(){
-    /* YOUR CODE HERE */
+window.onload = function() {
+    var string = document.location.search
+    readQueryParams(string)
 };
 
 // Examine document.location.search and extract the info
@@ -21,8 +22,18 @@ window.onload = function(){
 //   NUMBER_OF_ROUNDS
 //   MOLES_PER_ROUND
 //   ROUND_COOLDOWN (in seconds)
-function readQueryParams() {
-    /* YOUR CODE HERE */
+function readQueryParams(string) {
+
+    var array = string.split(/\&/g)
+    var object = {}
+    array
+        .map(a => a.replace('?', '')
+            .replace('=', ' ')
+            .split(' '))
+        .forEach(a => object[a[0]] = a[1])
+    GLOBALS = object
+    console.log(GLOBALS)
+
 }
 
 // Create and insert a 3x3 HTML table.
@@ -46,8 +57,8 @@ function startGame() {
 }
 
 /**
-* Use a closure and the event loop to act every ROUND_COOLDOWN seconds
-*/
+ * Use a closure and the event loop to act every ROUND_COOLDOWN seconds
+ */
 function initiateRound(roundNumber) {
 
 }
