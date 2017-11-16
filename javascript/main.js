@@ -8,8 +8,8 @@ var GLOBALS = {};
 // Build the Mole Field of Dreams
 // Start the game
 //
-window.onload = function(){
-    /* YOUR CODE HERE */
+window.onload = function() {
+	readQueryParams();
 };
 
 // Examine document.location.search and extract the info
@@ -22,39 +22,37 @@ window.onload = function(){
 //   MOLES_PER_ROUND
 //   ROUND_COOLDOWN (in seconds)
 function readQueryParams() {
-    /* YOUR CODE HERE */
+	let searchArr = document.location.search.replace(/\?/, '').split('&');
+	searchArr.forEach(query => {
+		query = query.split('=');
+		GLOBALS[query[0]] = parseInt(query[1]);
+	});
 }
 
 // Create and insert a 3x3 HTML table.
 // Use createSingleMoleHole() to create the <td> elements
 function createMoleField() {
-    /* YOUR CODE HERE */
+	/* YOUR CODE HERE */
 }
 
 // Create a complex HTML snippet and return it.
 // The element returned from this function should look exactly like this
 // <td><div data-hole-occupied="false" class="mole-hole"></div></td>
 function createSingleMoleHole() {
-    /* YOUR CODE HERE */
+	/* YOUR CODE HERE */
 }
 
 /**
  * Reset the score and start round 0
  */
-function startGame() {
-
-}
+function startGame() {}
 
 /**
 * Use a closure and the event loop to act every ROUND_COOLDOWN seconds
 */
-function initiateRound(roundNumber) {
-
-}
+function initiateRound(roundNumber) {}
 
 /**
  * When we're sure the last moles are done, let the user try again
  */
-function endGame() {
-
-}
+function endGame() {}
