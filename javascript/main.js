@@ -10,6 +10,7 @@ var GLOBALS = {};
 //
 window.onload = function() {
 	readQueryParams();
+	createMoleField();
 };
 
 // Examine document.location.search and extract the info
@@ -32,14 +33,23 @@ function readQueryParams() {
 // Create and insert a 3x3 HTML table.
 // Use createSingleMoleHole() to create the <td> elements
 function createMoleField() {
-	/* YOUR CODE HERE */
+	let table = document.getElementById('mole-field');
+
+	for (let i = 0; i < 3; i++) {
+		let row = table.insertRow(i);
+		row.appendChild(createSingleMoleHole());
+		row.appendChild(createSingleMoleHole());
+		row.appendChild(createSingleMoleHole());
+	}
 }
 
 // Create a complex HTML snippet and return it.
 // The element returned from this function should look exactly like this
 // <td><div data-hole-occupied="false" class="mole-hole"></div></td>
 function createSingleMoleHole() {
-	/* YOUR CODE HERE */
+	let td = document.createElement('td');
+	td.innerHTML = '<div data-hole-occupied="false" class="mole-hole"></div>';
+	return td;
 }
 
 /**
