@@ -9,7 +9,8 @@ var GLOBALS = {};
 // Start the game
 //
 window.onload = function() {
-	readQueryParams();
+  readQueryParams();
+  createMoleField();
 };
 
 // Examine document.location.search and extract the info
@@ -22,24 +23,37 @@ window.onload = function() {
 //   MOLES_PER_ROUND
 //   ROUND_COOLDOWN (in seconds)
 function readQueryParams() {
-	let searchArr = document.location.search.replace(/\?/, '').split('&');
-	searchArr.forEach(query => {
-		query = query.split('=');
-		GLOBALS[query[0]] = parseInt(query[1]);
-	});
+  let searchArr = document.location.search.replace(/\?/, "").split("&");
+  searchArr.forEach(query => {
+    query = query.split("=");
+    GLOBALS[query[0]] = parseInt(query[1]);
+  });
 }
 
 // Create and insert a 3x3 HTML table.
 // Use createSingleMoleHole() to create the <td> elements
 function createMoleField() {
-	/* YOUR CODE HERE */
+  let table = document.createElement("table");
+  let moleField = document.querySelector("#mole-field");
+  moleField.appendChild(table);
+  for (let i = 0; i < 3; i++) {
+    let tr = document.createElement("tr");
+    table.appendChild(tr);
+    for (let j = 0; j < 3; j++) {
+      let td = createSingleMoleHole();
+      tr.appendChild(td);
+    }
+  }
 }
 
 // Create a complex HTML snippet and return it.
 // The element returned from this function should look exactly like this
 // <td><div data-hole-occupied="false" class="mole-hole"></div></td>
 function createSingleMoleHole() {
-	/* YOUR CODE HERE */
+  let element = document.createElement("td");
+  element["data-hole-occupied"] = "false";
+  element.className = "mole-hole";
+  return element;
 }
 
 /**
