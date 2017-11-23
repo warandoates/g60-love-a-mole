@@ -33,12 +33,10 @@ function readQueryParams() {
 // Create and insert a 3x3 HTML table.
 // Use createSingleMoleHole() to create the <td> elements
 function createMoleField() {
-  let table = document.createElement("table");
   let moleField = document.querySelector("#mole-field");
-  moleField.appendChild(table);
   for (let i = 0; i < 3; i++) {
     let tr = document.createElement("tr");
-    table.appendChild(tr);
+    moleField.appendChild(tr);
     for (let j = 0; j < 3; j++) {
       let td = createSingleMoleHole();
       tr.appendChild(td);
