@@ -1,12 +1,11 @@
 /* Some CSS must be finished */
 
 html {
-  background-color: #ade0ff; /* a bright beautiful blue */
+  background-color: #ADE0FF; /* a bright beautiful blue */
   font-family: Tahoma;
 }
 
-#main-header,
-#sub-header {
+#main-header, #sub-header {
   text-align: center;
 }
 
