@@ -13,11 +13,11 @@ html {
   margin: 0 auto;
   display: table;
 
- /* Make the game starter button nicer to look at */
- /* Using your own judegement about "nice" */
+/* Make the game starter button nicer to look at */
+/* Using your own judegement about "nice" */
 }
 
-/* Make the game-starter button change colors when the mouse 
+/* Make the game-starter button change colors when the mouse
    is hovering over it */
 
 #mole-field {
@@ -30,26 +30,32 @@ html {
   border: 5px solid #136E23; /* a darker green, like hedges */
 }
 
-/* Use the following selectors style moles and mole-holes 
+/* Use the following selectors style moles and mole-holes
    HINT: the mole.png file is 62px by 62px */
 #mole-field td {
-  
+  width: 93px;
+  height: 93px;
 }
 
 .mole-hole {
-
+  width: 62px;
+  height: 62px;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
 }
 
-/* Make sure every mole appears as the mole.png file in this folder 
-   Bonus points for making the mouse turn into heart.png when the 
+/* Make sure every mole appears as the mole.png file in this folder
+   Bonus points for making the mouse turn into heart.png when the
    mouse hovers over a mole! */
 .mole {
 
 }
 
 /* When a mole has been clicked, it's in love.
-   make sure when a mole has been clicked it gets the 
+   make sure when a mole has been clicked it gets the
    foundLove.png as it's background */
 .in-love {
-
+  
 }
